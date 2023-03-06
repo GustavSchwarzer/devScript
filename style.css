@@ -1,0 +1,39 @@
+.c-item{
+    height: 80vh;
+    }
+.c-img{
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    }
+#CTA-carousel{
+    animation: fadeInLeftBig; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s;
+  
+}
+#CTA2-carousel{
+    animation: fadeInRightBig; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s;
+    
+}
+
+.master{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.teste{
+  align-items: center;
+  text-align: center;
+
+  
+}
+
+.teste p{
+  margin-right: 15px;
+  
+ 
+
+}
