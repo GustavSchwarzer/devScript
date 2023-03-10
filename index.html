@@ -11,13 +11,20 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js">
 
   
 
   <title>Teste LP DevScript</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient pb-4">
+  <div class="TTnavbar">
+    <img src="./img/alcie-neonDeVerdd-novoTamanho.png" alt="alcie">
+    <p class="textNavBar">Dev&nbsp&nbsp  &nbsp  Script</p>  
+  </div>
+
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient pb-4">
       <div class="container pt-3">
         <a class="navbar-brand" href="#">DevScript Softwares</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +44,7 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> -->
     <div class="wpp-btn">
       <a href="https://api.whatsapp.com/send/?phone=5516992745393&text=Ol%C3%A1+meu+nome+%C3%A9+Cleide%2C+em+que+podemos+atend%C3%AA-los%3F&type=phone_number&app_absent=0" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon></a>
    </div>
@@ -68,7 +75,7 @@
           </div>
           <div class="carousel-item  c-item">
             <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100 c-img" alt="Slide 3">
-            <div class="carousel-caption top-0 mt-0 ">
+            <div class="carousel-caption top-0 mt-4 ">
               <p class="mt-5 fs-3 text-uppercase ">DevScript Softwares</p>
               <h1 class="display-1 fw-bolder text-capitalize " id="CTA-carousel">Criação de Sites</h1>
               <h3 id="CTA2-carousel">Nada mais importante para uma empresa do que um site amigavel e bonito para trazer credibilidade</h3>
@@ -87,21 +94,23 @@
       </div>
 
       <div class="master  mt-5">
-          <div class="teste mb-5 ">
+          <div class="init-hidden teste mb-5 " id="teste" >
           <img src="https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="bd-placeholder-img rounded-circle" width="240" height="240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
   
           <h2 class="fw-normal">Sites</h2>
           <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
           <p><a class="btn btn-secondary" href="#">View details »</a></p>
         </div>
-        <div class="teste  mb-5">
+
+
+        <div class="init-hidden teste mb-5">
           <img src="https://framerusercontent.com/images/KlaqFOQKOFou10zeWslom9XmU4.jpg" class="bd-placeholder-img rounded-circle" width="240" height="240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
   
           <h2 class="fw-normal">Landing Pages</h2>
           <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
           <p><a class="btn btn-secondary" href="#">View details »</a></p>
         </div>
-        <div class="teste  mb-5">
+        <div class="init-hidden teste  mb-5">
           <img src="https://img.olhardigital.com.br/wp-content/uploads/2022/11/shutterstock_744577681.jpg" class="bd-placeholder-img rounded-circle" width="240" height="240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
   
           <h2 class="fw-normal">Tag's do Google</h2>
@@ -109,12 +118,46 @@
           <p><a class="btn btn-secondary" href="#">View details »</a></p>
         </div> 
       </div>
-<br><br><br><br><br>
+
+      
+    
+
+    
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 
   <script>
-    AOS.init();
-  </script>   
+    const observer = new IntersectionObserver( entries =>{
+      console.log(entries)
+
+      Array.from(entries).forEach(entry =>{
+        if(entry.intersectionRatio >= 1){
+          entry.target.classList.add('init-hidden-of')
+        }
+      })
+
+      entries[0].target.classList.add('init-hidden-of')
+    },{
+      threshold: 0.3
+    }
+    )
+
+    Array.from(document.querySelectorAll('.init-hidden')).forEach(element =>{
+
+      observer.observe(element);
+    })
+    
+  </script>
+
+
+    
+  <script src="./script.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>    
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
